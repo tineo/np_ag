@@ -1,0 +1,280 @@
+{
+  "$schema": "https://www.krakend.io/schema/v2.9/krakend.json",
+  "version": 3,
+  "output_encoding": "no-op",
+  "echo_endpoint": true,
+  "debug_endpoint": true,
+  "port": 9090,
+  "name": "neop",
+  "extra_config": {
+    "security/cors": {
+      "allow_origins": [
+        "*"
+      ],
+      "allow_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "allow_headers": [
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With"
+      ],
+      "expose_headers": [
+        "Content-Length",
+        "X-Krakend-Header"
+      ],
+      "max_age": "9h",
+      "allow_credentials": false,
+      "debug": false
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/v1/accounts",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/accounts",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://localhost:5000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/accounts/{id}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/accounts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://localhost:5000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/accounts",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/accounts",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "POST",
+          "host": [
+            "http://localhost:5000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/accounts/{id}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/accounts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "PUT",
+          "host": [
+            "http://localhost:5000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/accounts/{id}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/accounts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "DELETE",
+          "host": [
+            "http://localhost:5000"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/contacts",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/contacts",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://localhost:5001"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/contacts/{id}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/contacts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://localhost:5001"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/contacts",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/contacts",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "POST",
+          "host": [
+            "http://localhost:5001"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/contacts/{id}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/contacts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "PUT",
+          "host": [
+            "http://localhost:5001"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/contacts/{id}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/contacts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "DELETE",
+          "host": [
+            "http://localhost:5001"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/odts",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/odts",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://localhost:5002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/odts/{id}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/odts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://localhost:5002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/odts",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/odts",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "POST",
+          "host": [
+            "http://localhost:5002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/odts/{id}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/odts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "PUT",
+          "host": [
+            "http://localhost:5002"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/v1/odts/{id}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/odts/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "DELETE",
+          "host": [
+            "http://localhost:5002"
+          ]
+        }
+      ]
+    }   
+  ]
+}
+
+
+
